@@ -6,6 +6,6 @@ const hashGenerator = require('../crypto-utils/hash-generator')
 const router = express.Router()
 
 /* GET users listing. */
-router.get('/', (req, res, next) => res.json({ hash: hashGenerator.generateStaticHash() }))
+router.get('/', (req, res, next) => res.json({ hash: hashGenerator.generateDummyHash() }))
 
 module.exports = router

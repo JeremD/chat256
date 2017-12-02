@@ -15,7 +15,7 @@ app.use(logger('dev'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cookieParser())
-app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, '..', 'client', 'build')))
 
 // enable cors
 app.use((req, res, next) => {
@@ -24,7 +24,12 @@ app.use((req, res, next) => {
   next()
 })
 
-app.use('/generateDummyHash', generateDummyHash)
+app.use('/api/generateDummyHash', generateDummyHash)
+
+// catchAll handler to serve static react files
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '..', 'client', 'build', 'index.html'))
+})
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
@@ -41,7 +46,7 @@ app.use((err, req, res, next) => {
 
   // render the error page
   res.status(err.status || 500)
-  res.json({ error: 'Not found' })
+  res.json({ error: err.message })
 })
 
 module.exports = app
