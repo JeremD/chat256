@@ -1,0 +1,9 @@
+.page-content {
+  margin: 2em 2em;
+}
+
+.page-header {
+  height: 5em;
+  border-bottom: 1px solid #eae5e5;
+  margin: 0 0.5em;
+}

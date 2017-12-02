@@ -7,12 +7,12 @@ import SimpleHashPage from './Pages/SimpleHashPage';
 class App extends Component {
   render() {
     return (
-    <Router>
-      <div>
-        <Route exact path="/" component={HomePage} />
-        <Route path="/simple-hash" component={SimpleHashPage} />
-      </div>
-    </Router>
+      <Router>
+        <div>
+          <Route exact path="/" component={HomePage} />
+          <Route path="/simple-hash" component={SimpleHashPage} />
+        </div>
+      </Router>
     );
   }
 }
