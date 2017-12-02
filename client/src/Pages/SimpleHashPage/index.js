@@ -1,19 +1,19 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import './SimpleHashPage.css';
-import Page from '../../components/Page';
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+import './SimpleHashPage.css'
+import Page from '../../components/Page'
 
 class SimpleHashPage extends Component {
-  render() {
+  render () {
     return (
-     <Page>
-      <button><Link to="/">Go Back</Link></button>
-      <h1>
-        Welcome to the SimpleHashPage
-      </h1>
-     </Page>
-    );
+      <Page>
+        <button><Link to='/'>Go Back</Link></button>
+        <h1>
+          Welcome to the SimpleHashPage
+        </h1>
+      </Page>
+    )
   }
 }
 
-export default SimpleHashPage;
+export default SimpleHashPage
