@@ -1,0 +1,9 @@
+{
+  "name": "chat256",
+  "version": "0.0.0",
+  "scripts": {
+    "start": "toto"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
