@@ -28,7 +28,7 @@ const checkStatus = (response) => {
 * @return {object}           The response data
 */
 const request = (url, options) => {
-  let baseApiPath = 'http://localhost:XXXX'
+  let baseApiPath = 'http://localhost:3000'
 
   return fetch(`${baseApiPath}${url}`, options)
     .then(checkStatus)
