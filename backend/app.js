@@ -8,14 +8,9 @@ const cookieParser = require('cookie-parser')
 const bodyParser = require('body-parser')
 
 const generateDummyHash = require('./routes/generateDummyHash')
+const generateCustomHash = require('./routes/generateCustomHash')
 
 const app = express()
-
-app.use(logger('dev'))
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(cookieParser())
-app.use(express.static(path.join(__dirname, '..', 'client', 'build')))
 
 // enable cors
 app.use((req, res, next) => {
@@ -24,7 +19,14 @@ app.use((req, res, next) => {
   next()
 })
 
+app.use(logger('dev'))
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(cookieParser())
+app.use(express.static(path.join(__dirname, '..', 'client', 'build')))
+
 app.use('/api/generateDummyHash', generateDummyHash)
+app.use('/api/generateCustomHash', generateCustomHash)
 
 // catchAll handler to serve static react files
 app.get('*', (req, res) => {

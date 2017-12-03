@@ -1,5 +1,3 @@
-import 'whatwg-fetch'
-
 const parseJSON = (response) => response.json()
 
 /**
@@ -29,6 +27,7 @@ const checkStatus = (response) => {
 */
 const request = (url, options) => {
   let baseApiPath = 'http://localhost:3000/api'
+  options.mode = 'cors'
 
   return fetch(`${baseApiPath}${url}`, options)
     .then(checkStatus)

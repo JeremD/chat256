@@ -1,0 +1,23 @@
+.custom-hash-container {
+  display: flex;
+  justify-content: center;
+}
+
+.custom-hash_form {
+  display: flex;
+  width: 70%;
+  flex-direction: column;
+  text-align: center;
+}
+
+.custom-hash_form_element {
+  display: flex;
+  flex: 1;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin-bottom: 1em;
+}
+
+.custom-hash_form_field {
+  width: 100%;
+}
